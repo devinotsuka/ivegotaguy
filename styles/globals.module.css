@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  background: #f8f1e5;
+  font-family: 'Courier New', Courier, monospace;
+  color: #333;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #2f2f2f;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px double #2f2f2f;
+  padding-bottom: 0.5rem;
+}
+
+.card {
+  background: #fffdf6;
+  border: 2px solid #ccc;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+.input {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 80%;
+  margin-bottom: 1rem;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+.button {
+  background: #002f5f;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.guessList {
+  list-style: none;
+  padding: 0;
+}
+
+.guessItem {
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.feedback {
+  color: #008000;
+}
+
+.result {
+  padding: 1rem;
+}
+
+.playerImg {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #002f5f;
+  margin: 1rem 0;
+}
+
+.funFact {
+  color: #555;
+  font-style: italic;
+  font-size: 0.9rem;
+}

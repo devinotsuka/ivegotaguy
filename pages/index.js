@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { createClient } from '@supabase/supabase-js'
+import Head from 'next/head'
+import styles from '../styles/globals.module.css'
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -50,31 +52,44 @@ export default function Home() {
   }
 
   return (
-    <main style={{ padding: 20, fontFamily: 'sans-serif' }}>
-      <h1>I've Got a Guy ⚾</h1>
-      {!gameOver ? (
-        <div>
-          <input
-            placeholder='Enter your guess'
-            value={guess}
-            onChange={(e) => setGuess(e.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && handleGuess()}
-          />
-          <button onClick={handleGuess}>Guess</button>
-          <ul>
-            {guesses.map((g, i) => (
-              <li key={i}><strong>{g}</strong>: {feedback[i]}</li>
-            ))}
-          </ul>
-        </div>
-      ) : (
-        <div>
-          <h2>The Player Was:</h2>
-          <img src={player?.image} alt={player?.name} width={100} height={100} />
-          <p><strong>{player?.name}</strong> – {player?.team}</p>
-          <p><em>{player?.fun_fact}</em></p>
-        </div>
-      )}
-    </main>
+    <>
+      <Head>
+        <title>I've Got a Guy</title>
+      </Head>
+      <main className={styles.container}>
+        <h1 className={styles.title}>I've Got a Guy ⚾</h1>
+        {!gameOver ? (
+          <div className={styles.card}>
+            <input
+              className={styles.input}
+              placeholder='Enter your guess'
+              value={guess}
+              onChange={(e) => setGuess(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleGuess()}
+            />
+            <button className={styles.button} onClick={handleGuess}>
+              Guess
+            </button>
+            <ul className={styles.guessList}>
+              {guesses.map((g, i) => (
+                <li key={i}>
+                  <span className={styles.guessItem}>{g}</span>
+                  <span className={styles.feedback}>
+                    {feedback[i]}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <div className={styles.result}>
+            <h2>The Player Was:</h2>
+            <img src={player?.image} alt={player?.name} className={styles.playerImg} />
+            <p><strong>{player?.name}</strong> – {player?.team}</p>
+            <p className={styles.funFact}><em>{player?.fun_fact}</em></p>
+          </div>
+        )}
+      </main>
+    </>
   )
 }

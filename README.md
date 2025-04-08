@@ -1,3 +1,3 @@
-# I've Got a Guy - Next.js React App
+# I've Got a Guy - Retro Scorecard Edition
 
-MLB daily player guessing game.
+Retro-themed React frontend for the MLB guessing game.
