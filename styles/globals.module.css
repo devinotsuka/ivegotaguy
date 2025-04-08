@@ -80,17 +80,6 @@ td:hover {
   color: red; /* Red for incorrect */
 }
 
-/* Guesses List */
-.guessList {
-  list-style: none;
-  padding: 0;
-}
-
-.guessItem {
-  font-weight: bold;
-  margin-right: 1rem;
-}
-
 /* Result Section */
 .result {
   padding: 1rem;
@@ -110,4 +99,3 @@ td:hover {
   font-style: italic;
   font-size: 0.9rem;
 }
-
