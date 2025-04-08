@@ -92,7 +92,7 @@ export default function Home() {
 
             {player && (
               <>
-                <h3>Player Categories:</h3>
+                <h3 className={styles.categoryTitle}>Player Categories:</h3>
                 <table className={styles.table}>
                   <thead>
                     <tr>
@@ -143,7 +143,7 @@ export default function Home() {
           </div>
         ) : (
           <div className={styles.result}>
-            <h2>The Player Was:</h2>
+            <h2 className={styles.resultTitle}>The Player Was:</h2>
             <img src={player?.image} alt={player?.name} className={styles.playerImg} />
             <p><strong>{player?.name}</strong> – {player?.team}</p>
             <p className={styles.funFact}><em>{player?.fun_fact}</em></p>
