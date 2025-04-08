@@ -63,7 +63,8 @@
   text-align: center;
 }
 
-td:hover {
+/* Add this class for table cell hover */
+.tableCell:hover {
   background-color: #f1f1f1;
 }
 
