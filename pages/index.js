@@ -104,27 +104,27 @@ export default function Home() {
                   <tbody>
                     <tr>
                       <td className={styles.tableData}>Team</td>
-                      <td className={styles.tableData} style={getCellStyle(player?.team, guess)}>{guess}</td>
+                      <td className={styles.tableCell} style={getCellStyle(player?.team, guess)}>{guess}</td>
                       <td className={styles.tableData}>{player?.team}</td>
                     </tr>
                     <tr>
                       <td className={styles.tableData}>League</td>
-                      <td className={styles.tableData} style={getCellStyle(player?.league, guess)}>{guess}</td>
+                      <td className={styles.tableCell} style={getCellStyle(player?.league, guess)}>{guess}</td>
                       <td className={styles.tableData}>{player?.league}</td>
                     </tr>
                     <tr>
                       <td className={styles.tableData}>Division</td>
-                      <td className={styles.tableData} style={getCellStyle(player?.division, guess)}>{guess}</td>
+                      <td className={styles.tableCell} style={getCellStyle(player?.division, guess)}>{guess}</td>
                       <td className={styles.tableData}>{player?.division}</td>
                     </tr>
                     <tr>
                       <td className={styles.tableData}>Position</td>
-                      <td className={styles.tableData} style={getCellStyle(player?.position, guess)}>{guess}</td>
+                      <td className={styles.tableCell} style={getCellStyle(player?.position, guess)}>{guess}</td>
                       <td className={styles.tableData}>{player?.position}</td>
                     </tr>
                     <tr>
                       <td className={styles.tableData}>Ethnicity</td>
-                      <td className={styles.tableData} style={getCellStyle(player?.ethnicity, guess)}>{guess}</td>
+                      <td className={styles.tableCell} style={getCellStyle(player?.ethnicity, guess)}>{guess}</td>
                       <td className={styles.tableData}>{player?.ethnicity}</td>
                     </tr>
                   </tbody>
