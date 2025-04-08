@@ -1,15 +1,8 @@
-body {
-  margin: 0;
+/* Remove 'body' styling, and use .container or a class selector instead */
+.container {
   background: #f8f1e5;
   font-family: 'Courier New', Courier, monospace;
   color: #333;
-}
-
-.container {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
 .title {
@@ -81,3 +74,4 @@ body {
   font-style: italic;
   font-size: 0.9rem;
 }
+
