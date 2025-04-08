@@ -43,6 +43,44 @@
   margin-bottom: 1rem;
 }
 
+/* Table Styling */
+.table {
+  margin: 2rem auto;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+th, td {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+th {
+  background-color: #002f5f;
+  color: white;
+  font-weight: bold;
+}
+
+td {
+  font-size: 1.2rem;
+}
+
+td:hover {
+  background-color: #f1f1f1;
+}
+
+/* Feedback Styling */
+.feedback {
+  font-size: 1rem;
+  color: #008000; /* Green for correct */
+}
+
+.feedback.error {
+  color: red; /* Red for incorrect */
+}
+
+/* Guesses List */
 .guessList {
   list-style: none;
   padding: 0;
@@ -53,15 +91,7 @@
   margin-right: 1rem;
 }
 
-.feedback {
-  font-size: 1rem;
-  color: #008000; /* Green for correct */
-}
-
-.feedback.error {
-  color: red; /* Red for incorrect */
-}
-
+/* Result Section */
 .result {
   padding: 1rem;
 }
@@ -80,3 +110,4 @@
   font-style: italic;
   font-size: 0.9rem;
 }
+
