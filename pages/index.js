@@ -62,6 +62,7 @@ export default function Home() {
     }
   }
 
+  // Get the cell style (green for correct, red for incorrect)
   const getCellStyle = (category, guessValue) => {
     if (!guessValue) return {};
     return guessValue.toLowerCase() === category.toLowerCase()
@@ -89,43 +90,47 @@ export default function Home() {
               Guess
             </button>
 
-            <h3>Player Categories:</h3>
-            <table className={styles.table}>
-              <thead>
-                <tr>
-                  <th>Category</th>
-                  <th>Your Guess</th>
-                  <th>Correct Answer</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Team</td>
-                  <td style={getCellStyle(player?.team, guess)}> {guess} </td>
-                  <td>{player?.team}</td>
-                </tr>
-                <tr>
-                  <td>League</td>
-                  <td style={getCellStyle(player?.league, guess)}> {guess} </td>
-                  <td>{player?.league}</td>
-                </tr>
-                <tr>
-                  <td>Division</td>
-                  <td style={getCellStyle(player?.division, guess)}> {guess} </td>
-                  <td>{player?.division}</td>
-                </tr>
-                <tr>
-                  <td>Position</td>
-                  <td style={getCellStyle(player?.position, guess)}> {guess} </td>
-                  <td>{player?.position}</td>
-                </tr>
-                <tr>
-                  <td>Ethnicity</td>
-                  <td style={getCellStyle(player?.ethnicity, guess)}> {guess} </td>
-                  <td>{player?.ethnicity}</td>
-                </tr>
-              </tbody>
-            </table>
+            {player && (
+              <>
+                <h3>Player Categories:</h3>
+                <table className={styles.table}>
+                  <thead>
+                    <tr>
+                      <th>Category</th>
+                      <th>Your Guess</th>
+                      <th>Correct Answer</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Team</td>
+                      <td style={getCellStyle(player?.team, guess)}>{guess}</td>
+                      <td>{player?.team}</td>
+                    </tr>
+                    <tr>
+                      <td>League</td>
+                      <td style={getCellStyle(player?.league, guess)}>{guess}</td>
+                      <td>{player?.league}</td>
+                    </tr>
+                    <tr>
+                      <td>Division</td>
+                      <td style={getCellStyle(player?.division, guess)}>{guess}</td>
+                      <td>{player?.division}</td>
+                    </tr>
+                    <tr>
+                      <td>Position</td>
+                      <td style={getCellStyle(player?.position, guess)}>{guess}</td>
+                      <td>{player?.position}</td>
+                    </tr>
+                    <tr>
+                      <td>Ethnicity</td>
+                      <td style={getCellStyle(player?.ethnicity, guess)}>{guess}</td>
+                      <td>{player?.ethnicity}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </>
+            )}
 
             <ul className={styles.guessList}>
               {guesses.map((g, i) => (
