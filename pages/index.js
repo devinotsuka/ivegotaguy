@@ -32,24 +32,33 @@ export default function Home() {
     fetchDailyPlayer()
   }, [])
 
-  const handleGuess = () => {
-    if (!player || guesses.includes(guess)) return
-    const correct = [
+const handleGuess = () => {
+    if (!player || guesses.includes(guess)) return;
+
+    // Create an array of correct guesses
+    const correctCategories = [
       guess.toLowerCase() === player.name.toLowerCase() ? 'Name' : '',
       guess.toLowerCase() === player.position.toLowerCase() ? 'Position' : '',
       guess.toLowerCase() === player.division.toLowerCase() ? 'Division' : '',
       guess.toLowerCase() === player.team.toLowerCase() ? 'Team' : '',
       guess.toLowerCase() === (player.ethnicity || '').toLowerCase() ? 'Ethnicity' : '',
-    ].filter(Boolean)
+    ].filter(Boolean);
 
-    setFeedback((prev) => [...prev, correct.join(', ') || '❌'])
-    setGuesses((prev) => [...prev, guess])
-    setGuess('')
+    // If no correct categories, set 'incorrect'
+    const feedbackMessage = correctCategories.length > 0 ? `Correct categories: ${correctCategories.join(', ')}` : '❌ Incorrect';
 
+    // Set the state for feedback and guesses
+    setFeedback((prev) => [...prev, feedbackMessage]);
+    setGuesses((prev) => [...prev, guess]);
+
+    // Clear the guess input field
+    setGuess('');
+
+    // Check if the guess is correct or max guesses reached
     if (guess.toLowerCase() === player.name.toLowerCase() || guesses.length >= 9) {
-      setGameOver(true)
+      setGameOver(true);
     }
-  }
+};
 
   return (
     <>
