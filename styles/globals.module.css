@@ -1,8 +1,9 @@
-/* Remove 'body' styling, and use .container or a class selector instead */
+/* Base Styling for the App */
 .container {
-  background: #f8f1e5;
-  font-family: 'Courier New', Courier, monospace;
-  color: #333;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
 .title {
@@ -53,7 +54,12 @@
 }
 
 .feedback {
-  color: #008000;
+  font-size: 1rem;
+  color: #008000; /* Green for correct */
+}
+
+.feedback.error {
+  color: red; /* Red for incorrect */
 }
 
 .result {
@@ -74,4 +80,3 @@
   font-style: italic;
   font-size: 0.9rem;
 }
-
