@@ -32,8 +32,8 @@ export default function Home() {
     fetchDailyPlayer()
   }, [])
 
-const handleGuess = () => {
-    if (!player || guesses.includes(guess)) return;
+  const handleGuess = () => {
+    if (!player || guesses.includes(guess)) return
 
     // Create an array of correct guesses
     const correctCategories = [
@@ -42,23 +42,25 @@ const handleGuess = () => {
       guess.toLowerCase() === player.division.toLowerCase() ? 'Division' : '',
       guess.toLowerCase() === player.team.toLowerCase() ? 'Team' : '',
       guess.toLowerCase() === (player.ethnicity || '').toLowerCase() ? 'Ethnicity' : '',
-    ].filter(Boolean);
+    ].filter(Boolean)
 
     // If no correct categories, set 'incorrect'
-    const feedbackMessage = correctCategories.length > 0 ? `Correct categories: ${correctCategories.join(', ')}` : '❌ Incorrect';
+    const feedbackMessage = correctCategories.length > 0 
+      ? `Correct categories: ${correctCategories.join(', ')}` 
+      : '❌ Incorrect'
 
     // Set the state for feedback and guesses
-    setFeedback((prev) => [...prev, feedbackMessage]);
-    setGuesses((prev) => [...prev, guess]);
+    setFeedback((prev) => [...prev, feedbackMessage])
+    setGuesses((prev) => [...prev, guess])
 
     // Clear the guess input field
-    setGuess('');
+    setGuess('')
 
     // Check if the guess is correct or max guesses reached
     if (guess.toLowerCase() === player.name.toLowerCase() || guesses.length >= 9) {
-      setGameOver(true);
+      setGameOver(true)
     }
-};
+  }
 
   return (
     <>
@@ -81,11 +83,9 @@ const handleGuess = () => {
             </button>
             <ul className={styles.guessList}>
               {guesses.map((g, i) => (
-                <li key={i}>
-                  <span className={styles.guessItem}>{g}</span>
-                  <span className={styles.feedback}>
-                    {feedback[i]}
-                  </span>
+                <li key={i} className={styles.guessItem}>
+                  <span>{g}</span>
+                  <span className={styles.feedback}>{feedback[i]}</span>
                 </li>
               ))}
             </ul>
@@ -102,3 +102,4 @@ const handleGuess = () => {
     </>
   )
 }
+
