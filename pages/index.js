@@ -90,7 +90,7 @@ export default function Home() {
               Guess
             </button>
 
-            {player && (
+            {player && guesses.length > 0 && (
               <>
                 <h3 className={styles.categoryTitle}>Player Categories:</h3>
                 <table className={styles.table}>
@@ -139,3 +139,4 @@ export default function Home() {
     </>
   )
 }
+
